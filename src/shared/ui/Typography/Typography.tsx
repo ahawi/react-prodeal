@@ -15,7 +15,7 @@ type Variant =
   | 'caption_1'
   | 'caption_2'
 
-interface TypographyProps extends HTMLAttributes<HTMLElement> {
+export interface TypographyProps extends HTMLAttributes<HTMLElement> {
   variant?: Variant
   as?: keyof HTMLElementTagNameMap
 }
