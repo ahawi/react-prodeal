@@ -1,0 +1,86 @@
+:root {
+  --color-gray-0: transparent;
+  --color-gray-20: #f9f9fa;
+  --color-gray-40: #f3f3f5;
+  --color-gray-60: #ecedf0;
+  --color-gray-80: #e6e7eb;
+  --color-gray-100: #e0e1e6;
+  --color-gray-120: #dadce0;
+  --color-gray-140: #d4d6db;
+  --color-gray-160: #cfd1d6;
+  --color-gray-180: #caccd1;
+  --color-gray-200: #c4c6cc;
+  --color-gray-220: #bfc1c7;
+  --color-gray-240: #babcc2;
+  --color-gray-260: #b5b7bd;
+  --color-gray-280: #afb2b8;
+  --color-gray-300: #aaadb3;
+  --color-gray-320: #a5a7ad;
+  --color-gray-340: #a0a2a8;
+  --color-gray-360: #9b9da3;
+  --color-gray-380: #96989e;
+  --color-gray-400: #919399;
+  --color-gray-420: #8c8e94;
+  --color-gray-440: #87898f;
+  --color-gray-460: #82848a;
+  --color-gray-480: #7e7f85;
+  --color-gray-500: #797a80;
+  --color-gray-520: #74767a;
+  --color-gray-540: #6f7175;
+  --color-gray-560: #6a6c70;
+  --color-gray-580: #65676b;
+  --color-gray-600: #606266;
+  --color-gray-620: #5c5d61;
+  --color-gray-640: #57585c;
+  --color-gray-660: #525357;
+  --color-gray-680: #4d4e52;
+  --color-gray-700: #484a4d;
+  --color-gray-720: #444547;
+  --color-gray-740: #3f4042;
+  --color-gray-760: #3a3b3d;
+  --color-gray-780: #363638;
+  --color-gray-800: #313133;
+  --color-gray-820: #2c2d2e;
+  --color-gray-840: #272829;
+  --color-gray-860: #232324;
+  --color-gray-880: #1e1e1f;
+  --color-gray-900: #19191a;
+  --color-gray-920: #141414;
+  --color-gray-940: #0f0f0f;
+  --color-gray-960: #0f0f0f;
+  --color-gray-980: #050505;
+  --color-gray-1000: #000;
+
+  --color-text: var(--color-gray-820);
+  --color-text-secondary: var(--color-gray-400);
+  --color-link: #005bd1;
+  --color-link-visited: #528fdf;
+
+  --color-icon: var(--color-gray-820);
+  --color-icon-secondary: var(--color-gray-220);
+
+  --color-primary: #ff6743;
+  --color-secondary: var(--color-gray-820);
+
+  --color-success: #0dc268;
+  --color-error: #ed0a34;
+  --color-notify: #ff9e00;
+
+  --color-bg-secondary: rgba(0, 16, 61, 0.06);
+  --color-bg-secondary-2: #fbfbfb;
+  --color-bg-secondary-3: rgba(255, 103, 67, 0.05);
+
+  --color-rating: #ffd400;
+  --color-bg-warning: #fffce0;
+
+  --color-overlay: rgba(0, 16, 61, 0.48);
+
+  --color-divider: rgba(0, 16, 61, 0.12);
+
+  --color-border: #ebebeb;
+  --color-border-hover: rgba(0, 16, 61, 0.24);
+  --color-border-active: var(--color-overlay);
+  --color-border-focus: var(--color-border-hover);
+
+  --font: 'Inter', sans-serif;
+}
