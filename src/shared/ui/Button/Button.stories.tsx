@@ -1,6 +1,7 @@
 // Button.stories.tsx
 import type {Meta, StoryObj} from '@storybook/react'
 import {Button} from './Button'
+import {PlusIcon} from '../Icons/Plus'
 
 const meta: Meta<typeof Button> = {
   title: 'UI/Button',
@@ -33,6 +34,17 @@ export const Primary: Story = {
     size: 'medium',
     variant: 'primary',
     children: 'Primary Button',
+    loading: false,
+    disabled: false,
+  },
+}
+
+export const PrimaryIcon: Story = {
+  args: {
+    size: 'large',
+    variant: 'primary',
+    children: 'Primary Icon Button',
+    iconLeft: <PlusIcon />,
     loading: false,
     disabled: false,
   },

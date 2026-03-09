@@ -1,7 +1,8 @@
 .button {
   display: flex;
   flex-direction: row;
-  gap: 4px;
+  align-items: center;
+  justify-content: center;
   border-radius: 100px;
   border: none;
   transition: all 0.3s;
@@ -14,17 +15,53 @@
 
 .small {
   font-size: 14px;
-  padding: 6px 12px;
+  gap: 4px;
+
+  &:not(.iconLeft):not(.iconRight) {
+    padding: 6px 12px;
+  }
+
+  &.iconLeft {
+    padding: 6px 12px 6px 8px;
+  }
+
+  &.iconRight {
+    padding: 6px 8px 6px 12px;
+  }
 }
 
 .medium {
   font-size: 16px;
-  padding: 9px 16px;
+  gap: 6px;
+
+  &:not(.iconLeft):not(.iconRight) {
+    padding: 9px 16px;
+  }
+
+  &.iconLeft {
+    padding: 9px 16px 9px 10px;
+  }
+
+  &.iconRight {
+    padding: 9px 10px 9px 16px;
+  }
 }
 
 .large {
   font-size: 18px;
-  padding: 12px 20px;
+  gap: 8px;
+
+  &:not(.iconLeft):not(.iconRight) {
+    padding: 12px 20px;
+  }
+
+  &.iconLeft {
+    padding: 12px 20px 12px 12px;
+  }
+
+  &.iconRight {
+    padding: 12px 12px 12px 20px;
+  }
 }
 
 .border {
@@ -98,5 +135,28 @@
   &:disabled {
     border: 1px solid var(--color-border);
     background-color: #f6f6f6;
+  }
+}
+
+.iconLeft,
+.iconRight {
+  display: inline-flex;
+
+  &.small svg {
+    width: 10px;
+    height: 10px;
+    margin: 5px;
+  }
+
+  &.medium svg {
+    width: 15px;
+    height: 15px;
+    margin: 2px;
+  }
+
+  &.large svg {
+    width: 12px;
+    height: 12px;
+    margin: 6px;
   }
 }
