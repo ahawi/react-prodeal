@@ -1,0 +1,110 @@
+.radioWrapper {
+  position: relative;
+}
+
+.labelWrapper {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font);
+  user-select: none;
+  position: relative;
+  cursor: pointer;
+}
+
+.radioInput {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.customRadio {
+  position: relative;
+  width: 16px;
+  height: 16px;
+  background-color: var(--color-white);
+  border-radius: 50%;
+  border: 2px solid var(--color-border);
+  transition: all 0.2s;
+  flex-shrink: 0;
+  cursor: pointer;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    background-color: var(--color-white);
+    transition: all 0.2s;
+  }
+}
+
+.radioInput:checked + .customRadio {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.radioInput:checked + .customRadio::after {
+  opacity: 1;
+}
+
+.error .customRadio::before,
+.warning .customRadio::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 52%;
+  transform: translate(-52%, -50%);
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  pointer-events: none;
+}
+
+.error .customRadio::before {
+  border: 2px solid var(--color-error);
+}
+
+.warning .customRadio::before {
+  border: 2px solid var(--color-rating);
+}
+
+.small .customRadio {
+  width: 14px;
+  height: 14px;
+
+  &::after {
+    width: 6px;
+    height: 6px;
+  }
+}
+
+.medium .customRadio {
+  width: 18px;
+  height: 18px;
+
+  &::after {
+    width: 9px;
+    height: 9px;
+  }
+}
+
+.large .customRadio {
+  width: 20px;
+  height: 20px;
+
+  &::after {
+    width: 10px;
+    height: 10px;
+  }
+}
+
+.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
