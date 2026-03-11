@@ -1,0 +1,169 @@
+.fieldWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-family: var(--font);
+}
+
+.label {
+  font-size: 14px;
+  color: var(--color-divider);
+}
+
+.inputWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  border-radius: 6px;
+  transition: all 0.2s;
+  background-color: var(--color-white);
+  border: 2px solid var(--color-border);
+  color: var(--color-icon-secondary);
+
+  &:not(:focus-within):not(:has(input:disabled)):hover {
+    border-color: var(--color-border-hover);
+    color: var(--color-text);
+  }
+
+  .default {
+    border: 2px solid var(--color-border);
+  }
+
+  &.error {
+    border: 2px solid var(--color-error);
+  }
+
+  &.warning {
+    border: 2px solid var(--color-rating);
+  }
+
+  &:focus-within {
+    color: var(--color-text);
+    border: 2px solid var(--color-primary);
+  }
+
+  .input.small {
+    padding: 5px 7px;
+  }
+  .input.medium {
+    padding: 8px 11px;
+  }
+  .input.large {
+    padding: 11px 15px;
+  }
+
+  &:has(> .iconRight) {
+    .input.small {
+      padding-right: 0;
+    }
+    .input.medium {
+      padding-right: 0;
+    }
+    .input.large {
+      padding-right: 0;
+    }
+  }
+
+  &:has(> .iconLeft) {
+    .input.small {
+      padding-left: 0;
+    }
+    .input.medium {
+      padding-left: 0;
+    }
+    .input.large {
+      padding-left: 0;
+    }
+  }
+}
+
+.input {
+  appearance: none;
+  border: none;
+  background-color: transparent;
+  width: 100%;
+  font-size: 14px;
+  color: var(--color-text);
+  line-height: 1;
+  outline: none;
+
+  &.small {
+    padding: 5px 7px;
+    font-size: 14px;
+  }
+
+  &.medium {
+    padding: 8px 11px;
+    font-size: 16px;
+  }
+
+  &.large {
+    padding: 11px 15px;
+    font-size: 18px;
+  }
+
+  &::placeholder {
+    color: var(--color-text-secondary);
+  }
+}
+
+.label {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  margin: -1px !important;
+  border: 0 !important;
+  padding: 0 !important;
+  white-space: nowrap !important;
+  clip-path: inset(100%) !important;
+  clip: rect(0 0 0 0) !important;
+  overflow: hidden !important;
+}
+
+.iconLeft,
+.iconRight {
+  display: inline-flex;
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  position: absolute;
+  color: var(--color-icon-secondary);
+  
+  &.small {
+    margin-inline: 4px 7px;
+
+    & svg {
+      width: 9px;
+      height: 9px;
+      margin: 6px;
+    }
+  }
+
+  &.medium {
+    margin-inline: 4px 11px;
+
+    & svg {
+      width: 11px;
+      height: 11px;
+      margin: 6px;
+    }
+  }
+
+  &.large {
+    margin-inline: 8px 15px;
+
+    & svg {
+      width: 12px;
+      height: 12px;
+      margin: 8px;
+    }
+  }
+}
+
+.iconLeft {
+  left: 0;
+}
+
+.iconRight {
+  right: 0;
+}
