@@ -1,9 +1,9 @@
-import type {Meta, StoryObj} from '@storybook/react'
+import type {Meta, StoryObj} from '@storybook/react-vite'
 import {Radio} from './Radio'
 import {useState} from 'react'
 import {RadioGroup} from './RadioGroup'
 
-const meta: Meta<typeof Radio> = {
+const meta = {
   title: 'UI/Radio',
   component: Radio,
   tags: ['autodocs'],
@@ -20,7 +20,7 @@ const meta: Meta<typeof Radio> = {
       options: ['default', 'warning', 'error'],
     },
   },
-}
+} satisfies Meta<typeof Radio>
 
 export default meta
 

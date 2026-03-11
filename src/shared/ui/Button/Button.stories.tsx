@@ -1,8 +1,8 @@
-import type {Meta, StoryObj} from '@storybook/react'
+import type {Meta, StoryObj} from '@storybook/react-vite'
 import {Button} from './Button'
-import {PlusIcon} from '../icons/Plus'
+import {PlusIcon} from '../icons/PlusIcon'
 
-const meta: Meta<typeof Button> = {
+const meta = {
   title: 'UI/Button',
   component: Button,
   tags: ['autodocs'],
@@ -22,7 +22,7 @@ const meta: Meta<typeof Button> = {
       control: 'boolean',
     },
   },
-}
+} satisfies Meta<typeof Button>
 
 export default meta
 
