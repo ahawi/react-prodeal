@@ -1,4 +1,4 @@
-import {type HTMLAttributes, type InputHTMLAttributes, type ReactNode} from 'react'
+import {type InputHTMLAttributes, type ReactNode} from 'react'
 import styles from './Input.module.scss'
 
 export interface InputProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 'size'> {
@@ -25,7 +25,6 @@ export const Input = ({
   id,
   type,
   helperText,
-  className,
   ...props
 }: InputProps) => {
   return (
