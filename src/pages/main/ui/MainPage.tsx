@@ -1,9 +1,11 @@
-import { Typography } from "@/shared/ui/typography"
+import { Header } from '@/widgets/header'
+import { Hero } from '@/widgets/hero'
 
 const MainPage = () => {
   return (
     <>
-      <Typography variant='h1'>Заголовок 1</Typography>
+      <Header />
+      <Hero />
     </>
   )
 }
