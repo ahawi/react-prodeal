@@ -1,0 +1,33 @@
+.howitworks {
+  padding-block: 120px;
+  background-color: var(--color-bg-secondary-2);
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    row-gap: 40px;
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+  }
+
+  &__card {
+    display: flex;
+    column-gap: 16px;
+    align-items: center;
+    padding: 16px;
+    box-shadow: 0px 4px 16px 0px rgba(0, 0, 0, 0.08);
+    border-radius: 16px;
+
+    &_title {
+      line-height: 130%;
+    }
+
+    &_image {
+      margin: 5px;
+    }
+  }
+}
