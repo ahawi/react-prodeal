@@ -1,0 +1,31 @@
+.option {
+  padding: 3px 5px;
+  transition: all 0.2s;
+  cursor: pointer;
+
+  &:hover,
+  &.active {
+    color: var(--color-primary);
+    transition: all 0.2s;
+    background-color: var(--color-bg-secondary-3);
+  }
+
+  &.small {
+    padding: 2px 7px;
+    font-size: 14px;
+  }
+
+  &.medium {
+    padding: 5px 11px;
+    font-size: 16px;
+  }
+
+  &.large {
+    padding: 8px 15px;
+    font-size: 18px;
+  }
+}
+
+.selected {
+  color: var(--color-primary);
+}
