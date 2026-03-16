@@ -1,0 +1,96 @@
+.calculator {
+  display: flex;
+  flex-direction: column;
+  row-gap: 40px;
+  padding: 60px;
+  color: var(--color-white);
+  background-color: var(--color-secondary);
+  border-radius: 24px;
+  margin-top: 120px;
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    row-gap: 40px;
+  }
+
+  &__body {
+    display: flex;
+    justify-content: space-between;
+    column-gap: 32px;
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    row-gap: 16px;
+    flex: 1;
+    max-width: 339px;
+    justify-content: space-between;
+
+    &_title {
+      padding-bottom: 16px;
+      border-bottom: 1px solid #ebebeb;
+    }
+  }
+
+  &__button {
+    align-self: start;
+  }
+
+  &__group {
+    display: flex;
+  }
+}
+
+.parameters {
+  display: flex;
+  flex-direction: column;
+  row-gap: 16px;
+
+  label {
+    color: var(--color-text-secondary);
+    line-height: 22px;
+    font-size: 15px;
+  }
+
+  &:has(.radios) {
+    row-gap: 25px;
+  }
+
+  &__group {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 16px;
+  }
+}
+
+.radios {
+  display: flex;
+  flex-direction: column;
+  row-gap: 17px;
+  color: var(--color-white);
+
+  & span {
+    color: var(--color-white);
+  }
+}
+
+.radio {
+  display: flex;
+  align-items: center;
+  column-gap: 14px;
+  transition-duration: 0.2s;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
