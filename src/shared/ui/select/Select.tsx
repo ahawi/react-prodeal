@@ -9,6 +9,7 @@ interface SelectProps {
   selected: Option | null
   options: Option[]
   placeholder?: string
+  id?: string
   size: 'small' | 'medium' | 'large'
   onChange?: (selected: Option['value']) => void
   onClose?: () => void
@@ -20,6 +21,7 @@ export const Select = (props: SelectProps) => {
     options,
     placeholder,
     selected,
+    id,
     onChange,
     onClose,
   } = props
@@ -29,28 +31,10 @@ export const Select = (props: SelectProps) => {
   const rootRef = useRef<HTMLDivElement>(null)
   const placeholderRef = useRef<HTMLDivElement>(null)
 
-  useEffect(() => {
-    const handleClick = (event: MouseEvent) => {
-      const { target } = event
-      if (
-        isOpen &&
-        target instanceof Node &&
-        !rootRef.current?.contains(target)
-      ) {
-        onClose?.()
-        setIsOpen(false)
-      }
-    }
-
-    window.addEventListener('click', handleClick)
-
-    return () => {
-      window.removeEventListener('click', handleClick)
-    }
-  }, [isOpen, onClose])
-
   const handleKeydown = (event: KeyboardEvent<HTMLDivElement>) => {
     if (!isOpen && event.key === 'Enter') {
+      const index = options.findIndex((o) => o.value === selected?.value)
+      setHighlightedIndex(index === -1 ? 0 : index)
       setIsOpen(true)
       return
     }
@@ -73,10 +57,18 @@ export const Select = (props: SelectProps) => {
       setIsOpen(false)
     }
 
-    if (event.key === 'Escape') setIsOpen(false)
+    if (event.key === 'Escape') {
+      const index = options.findIndex((o) => o.value === selected?.value)
+
+      setHighlightedIndex(index === -1 ? 0 : index)
+      setIsOpen(false)
+    }
   }
 
   const handleOptionClick = (value: Option['value']) => {
+    const index = options.findIndex((o) => o.value === value)
+
+    setHighlightedIndex(index)
     setIsOpen(false)
     onChange?.(value)
   }
@@ -84,6 +76,29 @@ export const Select = (props: SelectProps) => {
   const handlePlaceholderClick: MouseEventHandler<HTMLDivElement> = () => {
     setIsOpen((prev) => !prev)
   }
+
+  useEffect(() => {
+    const handleClick = (event: MouseEvent) => {
+      const { target } = event
+      if (
+        isOpen &&
+        target instanceof Node &&
+        !rootRef.current?.contains(target)
+      ) {
+        const index = options.findIndex((o) => o.value === selected?.value)
+
+        setHighlightedIndex(index === -1 ? 0 : index)
+        onClose?.()
+        setIsOpen(false)
+      }
+    }
+
+    window.addEventListener('click', handleClick)
+
+    return () => {
+      window.removeEventListener('click', handleClick)
+    }
+  }, [isOpen, onClose])
 
   return (
     <div className={styles.selectWrapper} ref={rootRef}>
@@ -96,11 +111,16 @@ export const Select = (props: SelectProps) => {
         className={`${styles.select} ${styles[size]}`}
         onClick={handlePlaceholderClick}
         onKeyDown={handleKeydown}
+        id={id}
         role="button"
         tabIndex={0}
         ref={placeholderRef}
       >
-        {selected?.title || placeholder}
+        <span
+          className={selected ? styles.selectedText : styles.placeholderText}
+        >
+          {selected?.title || placeholder}
+        </span>
       </div>
       <ul
         className={`${styles.options} ${isOpen ? styles.open : ''} ${!isOpen ? styles.close : ''} ${styles[size]}`}

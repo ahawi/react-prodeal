@@ -1,12 +1,8 @@
 .fieldWrapper {
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 8px;
   font-family: var(--font);
-}
-
-.label {
-  font-size: 14px;
 }
 
 .inputWrapper {
@@ -24,8 +20,12 @@
     color: var(--color-text);
   }
 
-  .default {
+  &.default {
     border: 2px solid var(--color-border);
+
+    &:has(.input.medium) {
+      max-height: 40px;
+    }
   }
 
   &.error {
@@ -44,9 +44,11 @@
   .input.small {
     padding: 5px 7px;
   }
+
   .input.medium {
     padding: 8px 11px;
   }
+
   .input.large {
     padding: 11px 15px;
   }
@@ -83,7 +85,7 @@
   width: 100%;
   font-size: 14px;
   color: var(--color-text);
-  line-height: 1;
+  line-height: 22px;
   outline: none;
 
   &.small {
