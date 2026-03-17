@@ -1,0 +1,48 @@
+.consultation {
+  padding-block: 100px;
+  padding-inline: 60px 110px;
+  background-color: var(--color-secondary);
+  border-radius: 40px;
+  display: flex;
+  justify-content: space-between;
+  column-gap: 95px;
+  margin-top: 120px;
+
+  &__title {
+    max-width: 464px;
+    line-height: 120%;
+  }
+
+  &__body {
+    color: var(--color-white);
+    display: flex;
+    flex-direction: column;
+    row-gap: 24px;
+  }
+
+  &__description {
+    width: 65%;
+    font-weight: 300;
+    line-height: 1.4;
+  }
+
+  &__form {
+    max-width: 450px;
+    width: 100%;
+  }
+
+  &__formBody {
+    display: flex;
+    flex-direction: column;
+    row-gap: 24px;
+    background-color: var(--color-white);
+    border-radius: 24px;
+    padding: 32px;
+  }
+
+  &__privacy {
+    font-size: 12px;
+    color: var(--color-text-secondary);
+    text-align: center;
+  }
+}
