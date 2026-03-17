@@ -5,7 +5,7 @@ import { Typography } from '@/shared/ui/typography'
 const reviews: ReviewCardProps[] = [
   {
     id: '1',
-    img: '/src/app/assets/images/review-1.png',
+    img: '/src/shared/assets/images/review-1.png',
     name: 'Максим Фролов',
     rating: 5,
     reviewText:
@@ -13,7 +13,7 @@ const reviews: ReviewCardProps[] = [
   },
   {
     id: '2',
-    img: '/src/app/assets/images/review-2.png',
+    img: '/src/shared/assets/images/review-2.png',
     name: 'Александр Исаев',
     rating: 5,
     reviewText:
@@ -21,7 +21,7 @@ const reviews: ReviewCardProps[] = [
   },
   {
     id: '3',
-    img: '/src/app/assets/images/review-3.png',
+    img: '/src/shared/assets/images/review-3.png',
     name: 'Михаил Родионов',
     rating: 5,
     reviewText:
@@ -29,7 +29,7 @@ const reviews: ReviewCardProps[] = [
   },
   {
     id: '4',
-    img: '/src/app/assets/images/review-4.png',
+    img: '/src/shared/assets/images/review-4.png',
     name: 'Руслан Аримов',
     rating: 5,
     reviewText:

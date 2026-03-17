@@ -42,14 +42,14 @@ const Footer = () => {
 
           <li className={styles.footer__item}>
             <a href="#" className={styles.footer__link}>
-              Политика конфиденцальности
+              Политика конфиденциальности
             </a>
           </li>
         </ul>
 
         <ul className={styles.footer__list}>
           {mainLinks.map((link) => (
-            <li className={styles.footer__item}>
+            <li className={styles.footer__item} key={link.title}>
               <a href={link.href} className={styles.footer__link}>
                 {link.title}
               </a>
