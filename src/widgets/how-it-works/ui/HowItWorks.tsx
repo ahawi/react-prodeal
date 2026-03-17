@@ -1,8 +1,8 @@
 import styles from './HowItWorks.module.scss'
 import { Typography } from '@/shared/ui/typography'
-import WalletIcon from '@/app/assets/images/wallet.svg'
-import DeliveryBoxIcon from '@/app/assets/images/delivery-box.svg'
-import FolderIcon from '@/app/assets/images/folder.svg'
+import WalletIcon from '@/shared/assets/images/wallet.svg'
+import DeliveryBoxIcon from '@/shared/assets/images/delivery-box.svg'
+import FolderIcon from '@/shared/assets/images/folder.svg'
 
 const steps = [
   { text: '1. Устная договорённость участников', icon: DeliveryBoxIcon },

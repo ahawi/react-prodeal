@@ -1,4 +1,4 @@
-import HeroBanner from '@/app/assets/images/hero-banner.svg'
+import HeroBanner from '@/shared/assets/images/hero-banner.svg'
 import styles from './Hero.module.scss'
 import { Button } from '@/shared/ui/button'
 import { Typography } from '@/shared/ui/typography'

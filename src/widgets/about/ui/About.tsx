@@ -1,6 +1,6 @@
 import styles from './About.module.scss'
 import { Typography } from '@/shared/ui/typography'
-import Author from '@/app/assets/images/author.png'
+import Author from '@/shared/assets/images/author.png'
 
 const features = [
   'Низкая стоимость',

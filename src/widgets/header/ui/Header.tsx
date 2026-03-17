@@ -1,6 +1,6 @@
 import { Button } from '@/shared/ui/button'
 import styles from './Header.module.scss'
-import Logo from '@/app/assets/images/logo.svg'
+import Logo from '@/shared/assets/images/logo.svg'
 import { Link } from 'react-router'
 
 const Header = () => {
