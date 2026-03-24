@@ -1,13 +1,9 @@
 import { configureStore } from '@reduxjs/toolkit'
-import { loginSlice } from '@/features/auth/login'
-import { registerSlice } from '@/features/auth/register'
-import { userSlice } from '@/entities/user'
+import authSlice from '@/features/auth/model/authSlice'
 
 export const store = configureStore({
   reducer: {
-    login: loginSlice.reducer,
-    register: registerSlice.reducer,
-    user: userSlice.reducer,
+    auth: authSlice.reducer,
   },
 })
 

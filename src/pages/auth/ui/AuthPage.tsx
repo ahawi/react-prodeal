@@ -1,11 +1,17 @@
-import { Link, Outlet, useLocation } from 'react-router'
+import { Link, Outlet, useLocation, Navigate } from 'react-router'
 import { Typography } from '@/shared/ui/typography'
 import styles from './Auth.module.scss'
+import { useAppSelector } from '@/app/hooks/useAppDispatch'
 
 const AuthPage = () => {
   const location = useLocation()
-
   const isLogin = location.pathname.includes('login')
+  const user = useAppSelector((state) => state.auth.user)
+  const initialized = useAppSelector((state) => state.auth.initialized)
+
+  if (initialized && user) {
+    return <Navigate to="/" replace />
+  }
 
   return (
     <div className={styles.pageWrap}>

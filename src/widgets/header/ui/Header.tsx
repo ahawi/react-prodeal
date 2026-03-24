@@ -2,8 +2,13 @@ import { Button } from '@/shared/ui/button'
 import styles from './Header.module.scss'
 import Logo from '@/shared/assets/images/logo.svg'
 import { Link } from 'react-router'
+import { useAppSelector } from '@/app/hooks/useAppDispatch'
+
+import { ProfileIcon } from '@/shared/ui/icons/ProfileIcon'
 
 const Header = () => {
+  const user = useAppSelector((state) => state.auth.user)
+
   return (
     <header className={styles.header}>
       <div className={`${styles.inner} container`}>
@@ -49,15 +54,23 @@ const Header = () => {
               <time dateTime="09:00-18:00">09:00-18:00</time>
             </div>
           </div>
-          <Link to="/auth/login">
-            <Button
-              size="large"
-              variant="primary"
-              className={styles.rightBlock__button}
-            >
-              Войти
-            </Button>
-          </Link>
+          {user ? (
+            <div className={styles.user}>
+              <Link to="/profile">
+                <ProfileIcon />
+              </Link>
+            </div>
+          ) : (
+            <Link to="/auth/login">
+              <Button
+                size="large"
+                variant="primary"
+                className={styles.rightBlock__button}
+              >
+                Войти
+              </Button>
+            </Link>
+          )}
         </div>
       </div>
     </header>

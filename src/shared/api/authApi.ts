@@ -21,12 +21,22 @@ interface RegisterData {
 
 export const authApi = {
   login: async (data: LoginData) => {
-    const response = await api.post('/auth/login', data)
+    const response = await api.post('/api/auth/login', data)
     return response.data
   },
 
   register: async (data: RegisterData) => {
-    const response = await api.post('/auth/register', data)
+    const response = await api.post('/api/auth/register', data)
+    return response.data
+  },
+
+  getProfile: async () => {
+    const response = await api.get('/api/profile')
+    return response.data
+  },
+
+  logout: async () => {
+    const response = await api.post('/api/logout')
     return response.data
   },
 }

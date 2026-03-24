@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router'
 import styles from '@/pages/auth/ui/Auth.module.scss'
 import { Input } from '@/shared/ui/input'
 import { useAppDispatch, useAppSelector } from '@/app/hooks/useAppDispatch'
-import { registerUser } from '../model/registerThunk'
+import { registerUser } from '@/features/auth/model/authThunk'
 import * as yup from 'yup'
 import { Button } from '@/shared/ui/button'
 import { Typography } from '@/shared/ui/typography'
@@ -15,8 +15,8 @@ import { Checkbox } from '@/shared/ui/checkbox'
 const RegisterForm = () => {
   const dispatch = useAppDispatch()
   const navigate = useNavigate()
-  const error = useAppSelector((state) => state.login.error)
-  const loading = useAppSelector((state) => state.login.loading)
+  const error = useAppSelector((state) => state.auth.register.error)
+  const loading = useAppSelector((state) => state.auth.register.loading)
   const [showPassword, setShowPassword] = useState(false)
   const [showConfirmPassword, setShowConfirmPassword] = useState(false)
 
