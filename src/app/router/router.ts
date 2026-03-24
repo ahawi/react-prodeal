@@ -2,8 +2,9 @@ import { createBrowserRouter } from 'react-router'
 import MainPage from '@/pages/main/ui'
 import { MainLayout } from '../layout'
 import AuthPage from '@/pages/auth/ui'
-import { LoginForm } from '@/features/auth/login'
-import { RegisterForm } from '@/features/auth/register'
+import { LoginForm } from '@/widgets/login-form'
+import { RegisterForm } from '@/widgets/register-form'
+import ProfilePage from '@/pages/profile/ui'
 
 export const router = createBrowserRouter([
   {
@@ -14,6 +15,7 @@ export const router = createBrowserRouter([
         index: true,
         Component: MainPage,
       },
+      { path: '/profile', Component: ProfilePage },
       {
         path: 'auth',
         Component: AuthPage,
