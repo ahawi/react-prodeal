@@ -1,4 +1,4 @@
-import { ArrowDownIcon } from '../icons/ArrowDown'
+import { ArrowDownIcon } from '../icons/ArrowDownIcon'
 import { OptionEl, type Option } from './Option'
 import styles from './Select.module.scss'
 import type { KeyboardEvent } from 'react'
