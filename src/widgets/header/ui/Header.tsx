@@ -38,7 +38,7 @@ const Header = () => {
             </li>
           </ul>
         </nav>
-        
+
         <div className={styles.rightBlock}>
           <div className={styles.rightBlock__worktime}>
             <a className={styles.rightBlock__phone} href="tel:78003501005">
@@ -49,13 +49,15 @@ const Header = () => {
               <time dateTime="09:00-18:00">09:00-18:00</time>
             </div>
           </div>
-          <Button
-            size="large"
-            variant="primary"
-            className={styles.rightBlock__button}
-          >
-            Войти
-          </Button>
+          <Link to="/auth/login">
+            <Button
+              size="large"
+              variant="primary"
+              className={styles.rightBlock__button}
+            >
+              Войти
+            </Button>
+          </Link>
         </div>
       </div>
     </header>

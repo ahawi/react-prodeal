@@ -98,7 +98,7 @@ export const Select = (props: SelectProps) => {
     return () => {
       window.removeEventListener('click', handleClick)
     }
-  }, [isOpen, onClose])
+  }, [isOpen, onClose, options, selected?.value])
 
   return (
     <div className={styles.selectWrapper} ref={rootRef}>

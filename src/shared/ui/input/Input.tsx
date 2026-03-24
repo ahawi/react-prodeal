@@ -1,7 +1,10 @@
-import {type InputHTMLAttributes, type ReactNode} from 'react'
+import { type InputHTMLAttributes, type ReactNode } from 'react'
 import styles from './Input.module.scss'
 
-export interface InputProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 'size'> {
+export interface InputProps extends Omit<
+  InputHTMLAttributes<HTMLInputElement>,
+  'size'
+> {
   size?: 'small' | 'medium' | 'large'
   placeholder?: string
   iconLeft?: ReactNode
@@ -12,6 +15,7 @@ export interface InputProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 
   id?: string
   helperText?: string
   type?: string
+  onIconRightClick?: () => void
 }
 
 export const Input = ({
@@ -25,6 +29,7 @@ export const Input = ({
   id,
   type,
   helperText,
+  onIconRightClick,
   ...props
 }: InputProps) => {
   return (
@@ -37,7 +42,10 @@ export const Input = ({
 
       <div className={`${styles.inputWrapper} ${status ? styles[status] : ''}`}>
         {iconLeft && (
-          <button type='button' className={`${styles.iconLeft} ${styles[size]}`}>
+          <button
+            type="button"
+            className={`${styles.iconLeft} ${styles[size]}`}
+          >
             {iconLeft}
           </button>
         )}
@@ -52,7 +60,11 @@ export const Input = ({
         />
 
         {iconRight && (
-          <button type='button' className={`${styles.iconRight} ${styles[size]}`}>
+          <button
+            type="button"
+            className={`${styles.iconRight} ${styles[size]}`}
+            onClick={onIconRightClick}
+          >
             {iconRight}
           </button>
         )}
