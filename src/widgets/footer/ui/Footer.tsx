@@ -19,13 +19,11 @@ const socials = [
 
 const Footer = () => {
   const location = useLocation()
-  const isLogin =
-    location.pathname.includes('login') ||
-    location.pathname.includes('register')
+  const isMainPage = location.pathname === '/'
 
   return (
     <footer className={styles.footer}>
-      {!isLogin && (
+      {isMainPage ? (
         <div className={`${styles.footer__inner} container`}>
           <ul className={styles.footer__privacy__list}>
             <li className={styles.footer__item}>
@@ -86,9 +84,7 @@ const Footer = () => {
             </a>
           </div>
         </div>
-      )}
-
-      {isLogin && (
+      ) : (
         <div className={`${styles.loginInner} container`}>
           <div className={styles.loginLeft}>
             <Typography variant="text">© 2022 PRO-DEAL</Typography>
