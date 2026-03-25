@@ -1,6 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit'
-import type { User } from './types'
+import type { User } from './authThunk'
 import { fetchProfile, loginUser, logoutUser, registerUser } from './authThunk'
+import { authStorage } from './authStorage'
 
 interface RequestState {
   loading: boolean
@@ -33,7 +34,13 @@ const initialState: AuthState = {
 const authSlice = createSlice({
   name: 'auth',
   initialState,
-  reducers: {},
+  reducers: {
+    loadUserFromStorage: (state) => {
+      const data = authStorage.read()
+      if (data) state.user = data
+      state.initialized = true
+    },
+  },
   extraReducers: (builder) => {
     builder
       .addCase(loginUser.pending, (state) => {
@@ -43,6 +50,7 @@ const authSlice = createSlice({
       .addCase(loginUser.fulfilled, (state, action) => {
         state.login.loading = false
         state.user = action.payload.user
+        authStorage.save(action.payload.user)
       })
       .addCase(loginUser.rejected, (state, action) => {
         state.login.loading = false
@@ -56,6 +64,7 @@ const authSlice = createSlice({
       .addCase(registerUser.fulfilled, (state, action) => {
         state.register.loading = false
         state.user = action.payload.user
+        authStorage.save(action.payload.user)
       })
       .addCase(registerUser.rejected, (state, action) => {
         state.register.loading = false
@@ -69,12 +78,14 @@ const authSlice = createSlice({
       .addCase(fetchProfile.fulfilled, (state, action) => {
         state.profile.loading = false
         state.user = action.payload
+        authStorage.save(action.payload)
         state.initialized = true
       })
       .addCase(fetchProfile.rejected, (state, action) => {
         state.profile.loading = false
         state.profile.error = action.payload as string
         state.user = null
+        authStorage.clear()
         state.initialized = true
       })
 
@@ -85,6 +96,8 @@ const authSlice = createSlice({
       .addCase(logoutUser.fulfilled, (state) => {
         state.logout.loading = false
         state.user = null
+        authStorage.clear()
+        state.initialized = true
       })
       .addCase(logoutUser.rejected, (state, action) => {
         state.logout.loading = false
@@ -93,4 +106,5 @@ const authSlice = createSlice({
   },
 })
 
+export const { loadUserFromStorage } = authSlice.actions
 export default authSlice
