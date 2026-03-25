@@ -5,6 +5,7 @@ import AuthPage from '@/pages/auth/ui'
 import { LoginForm } from '@/widgets/login-form'
 import { RegisterForm } from '@/widgets/register-form'
 import ProfilePage from '@/pages/profile/ui'
+import { ProtectedRoute } from './protected-route'
 
 export const router = createBrowserRouter([
   {
@@ -15,7 +16,15 @@ export const router = createBrowserRouter([
         index: true,
         Component: MainPage,
       },
-      { path: '/profile', Component: ProfilePage },
+      {
+        Component: ProtectedRoute,
+        children: [
+          {
+            path: 'profile',
+            Component: ProfilePage,
+          },
+        ],
+      },
       {
         path: 'auth',
         Component: AuthPage,
