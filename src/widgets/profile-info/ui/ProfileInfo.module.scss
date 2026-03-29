@@ -1,0 +1,43 @@
+.content {
+  flex: 1;
+  max-width: 892px;
+  width: 100%;
+}
+
+.title {
+  margin: 0 0 28px;
+  font-size: 56px;
+  line-height: 1;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+
+.section {
+  margin-bottom: 34px;
+}
+
+.sectionTitle {
+  margin: 0 0 8px;
+  font-size: 26px;
+  line-height: 1.15;
+  font-weight: 700;
+}
+
+.sectionText {
+  margin: 0 0 22px;
+  color: #5f5f5f;
+  font-size: 15px;
+  line-height: 1.45;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.label {
+  font-size: 14px;
+  color: #9b9b9b;
+  line-height: 1.2;
+}
