@@ -1,4 +1,4 @@
-import type { User } from '@/features/auth/model/authThunk'
+import type { User } from '@/entities/auth/model/authThunk'
 import axios from 'axios'
 
 export const api = axios.create({
