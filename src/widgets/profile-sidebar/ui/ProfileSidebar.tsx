@@ -3,16 +3,9 @@ import styles from './ProfileSidebar.module.scss'
 import profileIcon from '@/shared/assets/images/folder.svg'
 import dealsIcon from '@/shared/assets/images/wallet.svg'
 import { Typography } from '@/shared/ui/typography'
-import { LogoutIcon } from '@/shared/ui/icons/LogoutIcon'
-import { useAppDispatch } from '@/app/hooks/useAppDispatch'
-import { logoutUser } from '@/features/auth/model/authThunk'
+import { LogoutButton } from '@/features/logout/ui'
 
 const ProfileSidebar = () => {
-  const dispatch = useAppDispatch()
-
-  const handleLogout = () => {
-    dispatch(logoutUser())
-  }
   return (
     <aside className={styles.sidebar}>
       <nav className={styles.menu}>
@@ -26,17 +19,7 @@ const ProfileSidebar = () => {
           <Typography variant="text">Сделки</Typography>
         </Link>
       </nav>
-
-      <button
-        type="button"
-        className={styles.logoutButton}
-        onClick={handleLogout}
-      >
-        <div className={styles.iconWrapper}>
-          <LogoutIcon className={styles.logoutIcon} />
-        </div>
-        <Typography variant="text">Выйти</Typography>
-      </button>
+      <LogoutButton />
     </aside>
   )
 }
