@@ -2,9 +2,9 @@ import { RouterProvider } from 'react-router'
 import { router } from './router'
 import { useAppDispatch } from './hooks/useAppDispatch'
 import { useEffect } from 'react'
-import { fetchProfile } from '@/features/auth/model/authThunk'
-import { loadUserFromStorage } from '@/features/auth/model/authSlice'
-import { authStorage } from '@/features/auth/model/authStorage'
+import { fetchProfile } from '@/entities/auth/model/authThunk'
+import { loadUserFromStorage } from '@/entities/auth/model/authSlice'
+import { authStorage } from '@/entities/auth/model/authStorage'
 
 function App() {
   const dispatch = useAppDispatch()
